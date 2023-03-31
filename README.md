@@ -8,8 +8,8 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 ## Steps
 
 - Schiacciando un bottone, si visualizzano i 5 numeri random
-- Dopo 5 secondi, scompaiono e l'unete deve inserire i numeri che si ricorda
-- Dopo avviene un controllo, che stama un messaggio di quanti e quali dei numeri da indovinare sono stati individuati.
+- Dopo 5 secondi, scompaiono e l'utente deve inserire i numeri che si ricorda
+- Dopo avviene un controllo, che stampa un messaggio di quanti e quali dei numeri da indovinare sono stati individuati.
 
 
 
