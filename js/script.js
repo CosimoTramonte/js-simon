@@ -5,7 +5,8 @@ const generalContainer = document.getElementById("playtable");
 
 let storedNumbers = 5;
 let numRandom = [];
-let arrayInput = [];
+let arrayInput =[];
+let numMemory =[];
 
 btnPlay.addEventListener("click", function(){
 
@@ -14,6 +15,7 @@ btnPlay.addEventListener("click", function(){
     generalContainer.classList.remove("hide");
 
     numRandom = getNumber();
+    console.log(numRandom);
 
     divNumber = placeOfNumber()
 
@@ -23,11 +25,18 @@ btnPlay.addEventListener("click", function(){
 
         const inputs = document.querySelectorAll('.input');
 
-       // inputs.forEach(inputs => {
-        //    arrayInput.push(inputs.value)
-       // })
-
-        winCondition()
+        inputs.forEach(inputs => {
+            arrayInput.push(parseInt(inputs.value))
+            console.log(parseInt(inputs.value));
+        })
+        
+        console.log(arrayInput);
+       
+          
+        if (numRandom != arrayInput) {
+            console.log("diversi");
+        } 
+        
     })
 
 
@@ -88,6 +97,7 @@ function crateMemoryInput() {
         
         let input = document.createElement("input");
         input.setAttribute("type", "number");
+        input.setAttribute("value", " ");
         input.setAttribute("min", "1");
         input.setAttribute("max", "10");
         input.classList.add("input");
@@ -103,5 +113,7 @@ function crateMemoryInput() {
 
 //win condition
 function winCondition(){
+
+    
 
 }
