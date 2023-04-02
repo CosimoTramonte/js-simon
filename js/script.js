@@ -3,10 +3,11 @@ const btnPlay = document.getElementById("gioca");
 const btnControlla = document.createElement("button");
 const generalContainer = document.getElementById("playtable");
 
+const divInput = document.createElement("div");
+
 let storedNumbers = 5;
 let numRandom = [];
 let arrayInput =[];
-let numMemory =[];
 
 btnPlay.addEventListener("click", function(){
 
@@ -25,18 +26,25 @@ btnPlay.addEventListener("click", function(){
 
         const inputs = document.querySelectorAll('.input');
 
+        // questa funzione per ogni inputs compie quest'azione
         inputs.forEach(inputs => {
-            arrayInput.push(parseInt(inputs.value))
-            console.log(parseInt(inputs.value));
+            if (numRandom.includes(parseInt(inputs.value)))
+            arrayInput.push(parseInt(inputs.value))          
         })
-        
+
         console.log(arrayInput);
-       
-          
-        if (numRandom != arrayInput) {
-            console.log("diversi");
-        } 
         
+        divInput.classList.add("hide");
+
+        message = ` 
+        Il gioco è terminato, questi sono i risultati: <br>
+        - hai indovinato ${arrayInput.length} numeri su  ${numRandom.length} <br>
+        - i numeri che hai indovinato ${arrayInput} <br>
+        - i numeri da indovinare ${numRandom} <br>
+        Sciaccia "Gioca" per rigiocare.
+        `
+        document.getElementById("message").innerHTML = message
+            
     })
 
 
@@ -69,9 +77,13 @@ function getRandomNumber(min,max){
 
 //reset
 function reset(){
+    console.log("reset");
     numRandom = [];
+    console.log(numRandom);
     arrayInput = [];
-    return numRandom
+    console.log(arrayInput);
+    document.getElementById("message").innerHTML = ""
+    
 }
 
 //creo un div dove possiamo visualizzare i numeri
@@ -90,11 +102,12 @@ function crateMemoryInput() {
 
     divNumber.remove();
 
-    const divInput = document.createElement("div");
     divInput.classList.add("divInput");
+    divInput.classList.remove("hide");
+
     
     for (let i = 0; i < storedNumbers; i++) {
-        
+
         let input = document.createElement("input");
         input.setAttribute("type", "number");
         input.setAttribute("value", " ");
@@ -108,12 +121,15 @@ function crateMemoryInput() {
     divInput.append(btnControlla)
 
     generalContainer.append(divInput);
-    return 
+
 }
 
 //win condition
 function winCondition(){
-
     
-
+    if(arrayInput === numRandom){
+        console.log("ciao");    
+    } else {
+        console.log("ciao ciao");
+    }
 }
