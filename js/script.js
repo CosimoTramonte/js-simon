@@ -28,7 +28,7 @@ btnPlay.addEventListener("click", function(){
 
         // questa funzione per ogni inputs compie quest'azione
         inputs.forEach(inputs => {
-            if (numRandom.includes(parseInt(inputs.value)))
+            if (numRandom.includes(parseInt(inputs.value)) && !(arrayInput.includes(parseInt(inputs.value))))
             arrayInput.push(parseInt(inputs.value))          
         })
 
