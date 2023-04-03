@@ -106,6 +106,7 @@ function crateMemoryInput() {
     divInput.classList.remove("hide");
 
     divInput.innerHTML= " ";
+    
     for (let i = 0; i < storedNumbers; i++) {
 
 
