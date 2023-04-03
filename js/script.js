@@ -105,8 +105,9 @@ function crateMemoryInput() {
     divInput.classList.add("divInput");
     divInput.classList.remove("hide");
 
-    
+    divInput.innerHTML= " ";
     for (let i = 0; i < storedNumbers; i++) {
+
 
         let input = document.createElement("input");
         input.setAttribute("type", "number");
